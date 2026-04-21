@@ -11,17 +11,15 @@ public class CloudSpawnerScript : MonoBehaviour
     public int rate;
     public float timer = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(timer < rate)
-        {
+        {//will this change
             timer += Time.deltaTime;
         }
         else
@@ -35,8 +33,7 @@ public class CloudSpawnerScript : MonoBehaviour
    void spawncloud()
     {
         float lowestpoint = transform.position.y - offset;
-        float higestpoint = transform.position.y + offset;
-        
+        float higestpoint = transform.position.y + offset;       
         
         Instantiate(cloud, new Vector3(transform.position.x, Random.Range(lowestpoint, higestpoint), Random.Range(-4, 4)), transform.rotation);
        
